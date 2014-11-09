@@ -1,0 +1,9 @@
+/app/config/parameters.php
+/public/core/
+/vendor/
+/composer.phar
+/composer.lock
+/nbproject/
+/.idea/
+/*.sublime-project
+/*.sublime-workspace

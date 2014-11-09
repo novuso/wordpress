@@ -1,0 +1,27 @@
+{
+    "name": "novuso/wordpress",
+    "description": "Novuso WordPress Project Template",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0",
+        "johnpbloch/wordpress": "~4.0",
+        "wpackagist-theme/twentyeleven": "~1.9",
+        "wpackagist-plugin/wordpress-importer": "~0.6"
+    },
+    "extra": {
+        "wordpress-install-dir": "public/core",
+        "installer-paths": {
+            "public/app_content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/app_content/themes/{$name}/": ["type:wordpress-theme"],
+            "public/app_content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        }
+    }
+}
