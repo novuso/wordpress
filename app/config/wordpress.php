@@ -1,13 +1,4 @@
 <?php
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix = 'press_';
-
 /**
  * WordPress Localized Language, defaults to English.
  *
