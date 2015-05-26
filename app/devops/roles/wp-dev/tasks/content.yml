@@ -1,0 +1,72 @@
+---
+- name: "content directory"
+  file:
+    dest: "{{ app_root_dir }}/public/app_content"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: "0755"
+
+- name: "content index"
+  copy:
+    src: "index.php"
+    dest: "{{ app_root_dir }}/public/app_content/index.php"
+
+- name: "mu-plugins directory"
+  file:
+    dest: "{{ app_root_dir }}/public/app_content/mu-plugins"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: "0755"
+
+- name: "mu-plugins index"
+  copy:
+    src: "index.php"
+    dest: "{{ app_root_dir }}/public/app_content/mu-plugins/index.php"
+
+- name: "plugins directory"
+  file:
+    dest: "{{ app_root_dir }}/public/app_content/plugins"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: "0755"
+
+- name: "plugins index"
+  copy:
+    src: "index.php"
+    dest: "{{ app_root_dir }}/public/app_content/plugins/index.php"
+
+- name: "themes directory"
+  file:
+    dest: "{{ app_root_dir }}/public/app_content/themes"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: "0755"
+
+- name: "themes index"
+  copy:
+    src: "index.php"
+    dest: "{{ app_root_dir }}/public/app_content/themes/index.php"
+
+- name: "theme symlink"
+  file:
+    src: "{{ app_root_dir }}/theme"
+    dest: "{{ app_root_dir }}/public/app_content/themes/{{ app_theme_name }}"
+    state: link
+    force: yes
+
+- name: "uploads directory"
+  file:
+    dest: "{{ app_root_dir }}/public/app_content/uploads"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: "0755"
+
+- name: "uploads index"
+  copy:
+    src: "index.php"
+    dest: "{{ app_root_dir }}/public/app_content/uploads/index.php"

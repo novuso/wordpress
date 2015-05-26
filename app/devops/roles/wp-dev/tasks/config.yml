@@ -1,0 +1,18 @@
+---
+- name: "check for salt"
+  stat:
+    path: "{{ app_root_dir }}/app/config/salt.php"
+  register: _app_salt_conf
+
+- name: "salt config"
+  shell: 'echo "<?php\n" > {{ app_root_dir }}/app/config/salt.php'
+  when: _app_salt_conf.stat.exists == false
+
+- name: "salt config"
+  shell: "curl -L https://api.wordpress.org/secret-key/1.1/salt/ >> {{ app_root_dir }}/app/config/salt.php"
+  when: _app_salt_conf.stat.exists == false
+
+- name: "config parameters"
+  template:
+    src: "parameters.php.j2"
+    dest: "{{ app_root_dir }}/app/config/parameters.php"

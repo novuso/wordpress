@@ -2,7 +2,12 @@
 /app/config/parameters.php
 /app/config/salt.php
 /app/devops/group_vars/*/parameters.yml
+/public/app_content/
 /public/core/
+/public/.htaccess
+/theme/assets/css/
+/theme/assets/dist/
+/theme/assets/vendor/
 /vendor/
 /composer.phar
 /composer.lock

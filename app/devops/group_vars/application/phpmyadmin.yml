@@ -1,0 +1,4 @@
+---
+phpmyadmin_server: "{{ project_webserver }}"
+phpmyadmin_user: "{{ ansible_user_id }}"
+phpmyadmin_group: "{{ ansible_user_id }}"

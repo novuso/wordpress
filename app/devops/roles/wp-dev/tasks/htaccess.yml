@@ -1,0 +1,11 @@
+---
+- name: "check for .htaccess"
+  stat:
+    path: "{{ app_root_dir }}/public/.htaccess"
+  register: _app_htaccess
+
+- name: "public .htaccess"
+  copy:
+    src: "htaccess"
+    dest: "{{ app_root_dir }}/public/.htaccess"
+  when: _app_htaccess.stat.exists == false

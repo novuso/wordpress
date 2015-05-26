@@ -1,1 +1,5 @@
 ---
+- include: "content.yml"
+- include: "config.yml"
+- include: "composer.yml"
+- include: "htaccess.yml"

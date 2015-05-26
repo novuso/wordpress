@@ -1,0 +1,88 @@
+<?php
+/**
+ * This file is part of the Novuso WordPress Framework
+ *
+ * @copyright Copyright (c) 2015, Novuso. <http://novuso.com>
+ * @license   http://opensource.org/licenses/MIT The MIT License
+ * @author    John Nickell <https://johnnickell.com>
+ */
+
+// {{ ansible_managed }}
+
+{% if app_enable_wp_super_cache %}
+// enable WP_CACHE
+define('WPCACHEHOME', PUBLIC_PATH.'/'.MODULES_DIRNAME.'/plugins/wp-super-cache/');
+define('WP_CACHE', true);
+{% endif %}
+
+/** The site and WordPress core URLs */
+define('WP_HOME', '{{ app_home_url }}');
+define('WP_SITEURL', WP_HOME.'/'.CORE_DIRNAME);
+
+/** The content directory and URL */
+define('WP_CONTENT_DIR', PUBLIC_PATH.'/'.MODULES_DIRNAME);
+define('WP_CONTENT_URL', WP_HOME.'/'.MODULES_DIRNAME);
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', '{{ app_database_name }}');
+
+/** MySQL database username */
+define('DB_USER', '{{ app_database_user }}');
+
+/** MySQL database password */
+define('DB_PASSWORD', '{{ app_database_password }}');
+
+/** MySQL hostname */
+define('DB_HOST', '{{ app_database_host }}');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', '{{ app_database_charset }}');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '{{ app_database_collate }}');
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = '{{ app_database_prefix }}';
+
+/**
+ * Authentication Unique Keys and Salts
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+require __DIR__.'/salt.php';
+
+/**
+ * WordPress Localized Language, defaults to English.
+ *
+ * Change this to localize WordPress. A corresponding MO file for the chosen
+ * language must be installed to wp-content/languages. For example, install
+ * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
+ * language support.
+ */
+define('WPLANG', '{{ app_wp_lang }}');
+
+/** WordPress debugging mode */
+define('WP_DEBUG', {% if app_debug %}true{% else %}false{% endif %});
+
+/** Post revisions limit */
+define('WP_POST_REVISIONS', {{ app_wp_post_revisions }});
+
+/** Force login and admin over HTTPS */
+define('FORCE_SSL_LOGIN', {% if app_admin_force_ssl %}true{% else %}false{% endif %});
+define('FORCE_SSL_ADMIN', {% if app_admin_force_ssl %}true{% else %}false{% endif %});
+
+/** Disable the plugin and theme editor. */
+define('DISALLOW_FILE_EDIT', {% if app_allow_file_edit %}false{% else %}true{% endif %});
+
+/** Disable plugin and theme update and installation. */
+define('DISALLOW_FILE_MODS', {% if app_allow_file_mods %}false{% else %}true{% endif %});

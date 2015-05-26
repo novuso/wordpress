@@ -1,0 +1,18 @@
+---
+# mysql_root_password: "root_password"
+# mysql_databases:
+# - name: "project"
+# mysql_users:
+# - name: "project"
+#   password: "user_password"
+# phpmyadmin_hostname: "project_phpmyadmin"
+# phpmyadmin_mysql_admin_pass: "root_password"
+# phpmyadmin_mysql_app_pass: "phpmyadmin_password"
+# app_database_name: "project"
+# app_database_user: "project"
+# app_database_password: "user_password"
+# app_database_host: "127.0.0.1"
+# app_database_charset: "utf8"
+# app_database_collate: ""
+# app_database_prefix: "prefix_"
+# app_github_api_token: "ThisIsTheGitHubApiAccessKey"

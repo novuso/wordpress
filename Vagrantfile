@@ -1,7 +1,7 @@
 
 # project settings
-project_name = "wordpress"
-project_hostname = "wordpress.dev"
+project_name = "wpproject"
+project_hostname = "wpproject.dev"
 project_aliases = "www.#{project_hostname}"
 project_managed_aliases = ["www.#{project_hostname}"]
 project_root = "/vagrant"

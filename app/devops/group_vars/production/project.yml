@@ -1,0 +1,8 @@
+---
+project_name: "wpproject"
+project_hostname: "wpproject.com"
+project_aliases: "www.wpproject.com"
+project_root: "/path/to/wpproject"
+project_public: "/path/to/wpproject/public"
+project_webserver: "apache"
+server_swap: "2048"

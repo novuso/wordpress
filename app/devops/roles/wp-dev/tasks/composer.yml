@@ -1,0 +1,16 @@
+---
+- name: "github credentials"
+  no_log: True
+  shell: "{{ app_composer_command }} config -g github-oauth.github.com {{ app_github_api_token }}"
+  args:
+    chdir: "{{ app_root_dir }}"
+  changed_when: false
+
+- name: "composer install"
+  composer:
+    command: install
+    no_dev: no
+    optimize_autoloader: no
+    prefer_dist: yes
+    working_dir: "{{ app_root_dir }}"
+  changed_when: false

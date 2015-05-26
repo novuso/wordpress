@@ -1,0 +1,15 @@
+---
+apache_run_user: "{{ ansible_user_id }}"
+apache_run_group: "{{ ansible_user_id }}"
+apache_virtual_hosts:
+- name: "{{ project_name }}"
+  server_name: "{{ project_hostname }}"
+  document_root: "{{ project_public }}"
+  server_aliases: ["{{ project_aliases }}"]
+  directory_index: "index.html index.php"
+  ssl_enabled: true
+  ssl_cert_file: "/srv/ssl/certs/{{ project_name }}.crt"
+  ssl_cert_key: "/srv/ssl/private/{{ project_name }}.key"
+  files_match:
+    match: "\\.php$"
+    handler: "proxy:fcgi://127.0.0.1:9000"

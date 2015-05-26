@@ -1,0 +1,20 @@
+---
+app_root_dir: "/path/to/project"
+app_home_url: "http://localhost"
+app_debug: true
+app_wp_post_revisions: 5
+app_enable_wp_super_cache: false
+app_admin_force_ssl: true
+app_allow_file_edit: false
+app_allow_file_mods: true
+app_wp_lang: ""
+app_theme_name: "wpproject"
+app_composer_command: "composer"
+app_database_name: "dbname"
+app_database_user: "root"
+app_database_password: "password"
+app_database_host: "127.0.0.1"
+app_database_charset: "utf8"
+app_database_collate: ""
+app_database_prefix: "prefix_"
+app_github_api_token: "ThisIsTheGitHubApiAccessKey"

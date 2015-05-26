@@ -1,0 +1,4 @@
+---
+app_root_dir: "{{ project_root }}"
+app_home_url: "http://{{ project_hostname }}"
+app_theme_name: "{{ project_name }}"
