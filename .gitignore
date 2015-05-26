@@ -1,9 +1,12 @@
+/.vagrant/
 /app/config/parameters.php
+/app/config/salt.php
+/app/devops/group_vars/*/parameters.yml
 /public/core/
 /vendor/
 /composer.phar
 /composer.lock
-/nbproject/
 /.idea/
+/nbproject/
 /*.sublime-project
 /*.sublime-workspace
